@@ -56,7 +56,7 @@ public class SystemController   {
 
         Integer userType = loginForm.getUserType();
         String username = loginForm.getUsername();
-        String password = MD5.encrypt(loginForm.getPassword());
+        String password = loginForm.getPassword();
 
         Object login = null;
         if(userType == 1) {
