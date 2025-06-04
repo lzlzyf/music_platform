@@ -31,22 +31,6 @@ public class CommentController {
         commentService.submitComment(comment);
         return new ResponseResult(200,"提交成功",null);
     }
-//    @PostMapping("/submit")
-//    public ResponseResult submitComment(@RequestBody Song_list_comment comment, HttpServletRequest request) {
-//        String tokenHeader = request.getHeader("Authorization");
-//        System.out.println("【提交评价】收到的 token header：" + tokenHeader);
-//
-//        Long userId = AuthContextHolder.getUserIdToken(request);
-//        System.out.println("【提交评价】解析到的 userId：" + userId);
-//
-//        if (userId == null) {
-//            return new ResponseResult(401, "未授权", null);
-//        }
-//
-//        comment.setUser_id(userId.intValue());
-//        commentService.submitComment(comment);
-//        return new ResponseResult(200, "提交成功", null);
-//    }
 
     //查询评价
     @GetMapping("/List/{songListId}")
