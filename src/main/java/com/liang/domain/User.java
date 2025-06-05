@@ -17,6 +17,8 @@ public class User {
     private String nickname;
     private String phone;
     private String avatar;
+    private String gender;
+    private String hobby;
     private LocalDateTime create_time;
 
 

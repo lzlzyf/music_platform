@@ -17,24 +17,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    //获取用户信息
-    @GetMapping("/info")
-    public ResponseResult getUser(HttpServletRequest request){
-        Long userId = AuthContextHolder.getUserIdToken(request);
-        if(userId == null){
-            return new ResponseResult(401,"未授权",null);
-        }
-        User user = userService.getUserById(userId.intValue());
-        if(user == null){
-            return new ResponseResult(404,"用户不存在",null);
-        }
-        return new ResponseResult(200,"获取成功",user);
-    }
+
     // 更新用户信息
     @PutMapping("/update")
     public ResponseResult updateUserInfo(@RequestBody User user, HttpServletRequest request) {
         Long userId = AuthContextHolder.getUserIdToken(request);
-        if (userId == null || user.getId() != userId.intValue()) {
+        if (userId == null) {
             return new ResponseResult(401, "无权限操作", null);
         }
         boolean success = userService.updateUser(user);
