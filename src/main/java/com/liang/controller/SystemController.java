@@ -98,6 +98,7 @@ public class SystemController   {
 
         User registerUser = loginService.registerUser(user);
 
+
         return new ResponseResult(200,"注册成功",null);
 
     }
