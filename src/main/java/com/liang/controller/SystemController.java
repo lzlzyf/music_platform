@@ -30,6 +30,9 @@ public class SystemController   {
 
     @RequestMapping("/getVerifiCodeImage")
     public void getVerifiCodeImage(HttpSession session, HttpServletResponse response) throws IOException {
+        response.setContentType("image/jpeg"); // 设置内容类型为 JPEG
+        response.setHeader("Cache-Control", "no-store"); // 防止缓存
+        response.setHeader("Pragma", "no-cache");
         //使用工具类获取验证码图片
         BufferedImage verifiCodeImage = CreateVerifiCodeImage.getVerifiCodeImage();
         //获取验证码图片中的值
@@ -39,6 +42,7 @@ public class SystemController   {
         //将验证码图片返回给浏览器
         ImageIO.write(verifiCodeImage, "JPG", response.getOutputStream());
     }
+
 
    @PostMapping("/login")
     public ResponseResult login(@RequestBody LoginForm loginForm, HttpSession session){
