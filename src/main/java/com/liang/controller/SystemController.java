@@ -98,7 +98,9 @@ public class SystemController   {
 
         User registerUser = loginService.registerUser(user);
 
-
+        if(registerUser == null){
+            return new ResponseResult(400,"注册失败",null);
+        }
         return new ResponseResult(200,"注册成功",null);
 
     }
