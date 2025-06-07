@@ -6,7 +6,9 @@
         set nickname = #{nickname},
             phone = #{phone},
             email = #{email},
-            avatar = #{avatar}
+            avatar = #{avatar},
+            gender = #{gender},
+            hobby = #{hobby}
         where id = #{id}
     </update>
     <select id="selectById" resultType="com.liang.domain.User">

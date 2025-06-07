@@ -33,11 +33,11 @@ public class SongServiceImpl implements SongService {
 
     @Override
     public void updateSong(Song song) {
-        songMapper.update(song);
+        songMapper.updateSong(song);
     }
 
     @Override
     public void deleteSong(int id) {
-        songMapper.deleteById(id);
+        songMapper.deleteSong(id);
     }
 }

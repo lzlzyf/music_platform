@@ -14,7 +14,7 @@
     <select id="selectBySongListId" resultType="com.liang.domain.Song_list_comment">
          select * from song_list_comment where song_list_id = #{songListId}
     </select>
-    <select id="selectById" resultType="com.liang.domain.Song_list_song">
+    <select id="selectById" resultType="com.liang.domain.Song_list_comment">
         select * from song_list_comment where id = #{id}
     </select>
 </mapper>

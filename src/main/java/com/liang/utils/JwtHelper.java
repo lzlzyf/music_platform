@@ -6,7 +6,7 @@ import org.springframework.util.StringUtils;
 import java.util.Date;
 
 public class JwtHelper {
-    private static long tokenExpiration = 24*60*60*1000;
+    private static long tokenExpiration = 7 * 24 * 60 * 60 * 1000;
     private static String tokenSignKey = "123456";
 
     //生成token字符串

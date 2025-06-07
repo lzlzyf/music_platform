@@ -2,30 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.liang.mapper.SongMapper">
     <insert id="insert">
-        insert into song (name, singer_id, album, lyrics, file_path, cover, create_time, duration)
-        values (#{name}, #{singer_id}, #{album}, #{lyrics}, #{file_path}, #{cover}, NOW(), #{duration})
+        insert into song (name, singer_id, album, lyrics, file_path, cover, duration)
+        values (#{name}, #{singerId}, #{album}, #{lyrics}, #{filePath}, #{cover}, #{duration})
     </insert>
-    <update id="update">
+    <update id="updateSong">
         update song set
-        name = #{name},
-        singer_id = #{singer_id},
-        album = #{album},
-        lyrics = #{lyrics},
-        file_path = #{file_path},
-        cover = #{cover},
-        duration = #{duration}
-    where id = #{id}
+            name = #{name},
+            singer_id = #{singerId},
+            album = #{album},
+            lyrics = #{lyrics},
+            file_path = #{filePath},
+            cover = #{cover}
+            duration = #{duration}
+        where id = {id}
     </update>
-    <update id="incrementPlayCount">
-        update song set play_count = play_count + 1 where id = #{id}
-    </update>
-    <delete id="deleteById">
+    <delete id="deleteSong">
         delete from song where id = #{id}
     </delete>
-    <select id="selectAll" resultType="com.liang.domain.Song">
-        select * from song
-    </select>
     <select id="selectById" resultType="com.liang.domain.Song">
         select * from song where id = #{id}
+    </select>
+    <select id="selectAll" resultType="com.liang.domain.Song">
+        select * from song
     </select>
 </mapper>

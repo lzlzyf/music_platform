@@ -1,6 +1,9 @@
 server:
   port: 3600
+  address: 0.0.0.0
 spring:
+  mvc:
+    static-path-pattern: /music/**,/mv/**
   datasource:
     url: jdbc:mysql://localhost:3306/music_platform?characterEncoding=utf-8&serverTimezone=UTC
     username: root
@@ -8,12 +11,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
     server:
-
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
-
-
     hikari:
       connection-test-query: SELECT 1
       connection-timeout: 60000
@@ -39,8 +36,8 @@ mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml # mapper映射文件路径
   type-aliases-package: com.liang.domain   # 配置哪个包下的类有默认的别名
 
-pagehelper:
-  helper-dialect: mysql         # 数据库方言（如 mysql、oracle）
-  reasonable: true              # 分页合理化参数，默认值为false
-  support-methods-arguments: true # 支持通过 Mapper 接口参数来传递分页参数
-  params: count=countSql        # 为了支持startPage(Object params)方法
+#pagehelper:
+#  helper-dialect: mysql         # 数据库方言（如 mysql、oracle）
+#  reasonable: true              # 分页合理化参数，默认值为false
+#  support-methods-arguments: true # 支持通过 Mapper 接口参数来传递分页参数
+#  params: count=countSql        # 为了支持startPage(Object params)方法

@@ -18,7 +18,6 @@ public class UserController {
     private UserService userService;
 
 
-    // 更新用户信息
     @PutMapping("/update")
     public ResponseResult updateUserInfo(@RequestBody User user, HttpServletRequest request) {
         Long userId = AuthContextHolder.getUserIdToken(request);

@@ -1,17 +1,16 @@
 package com.liang.utils;
 
+import org.springframework.stereotype.Component;
+
 import javax.servlet.http.HttpServletRequest;
-
+@Component
 public class AuthContextHolder {
+    //aop用户管理
+    public boolean isAdmin(HttpServletRequest request) {
+        String role = request.getHeader("User-Role");
+        return "admin".equalsIgnoreCase(role);
+    }
 
-    //从请求头token获取userid
-//    public static Long getUserIdToken(HttpServletRequest request) {
-//        //从请求头token
-//        String token = request.getHeader("token");
-//        //调用工具类
-//        Long userId = JwtHelper.getUserId(token);
-//        return userId;
-//    }
     public static Long getUserIdToken(HttpServletRequest request) {
         String token = request.getHeader("Authorization");
         if (token != null && token.startsWith("Bearer ")) {

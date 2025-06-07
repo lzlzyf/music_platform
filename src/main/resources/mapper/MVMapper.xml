@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liang.mapper.MVMapper">
+    <insert id="insert">
+        insert into mv(title, description, video_path, cover_path,create_tinme )
+            values (#{title}, #{description}, #{video_path}, #{cover_path},NOW()})
+    </insert>
+    <update id="update">
+        update mv set
+            title = #{title},
+            description = #{description},
+            video_path = #{video_path},
+            cover_path = #{cover_path},
+    where id = #{id}
+    </update>
+    <delete id="deleteById">
+        delete from mv where id = #{id}
+    </delete>
+    <select id="selectAll" resultType="com.liang.domain.MV">
+        select * from mv
+    </select>
+    <select id="selectById" resultType="com.liang.domain.MV">
+        select * from mv where id = #{id}
+    </select>
+</mapper>
