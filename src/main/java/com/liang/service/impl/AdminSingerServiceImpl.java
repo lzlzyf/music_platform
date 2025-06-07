@@ -41,6 +41,6 @@ public class AdminSingerServiceImpl implements AdminSingerService {
 
     @Override
     public List<Singer> getAllSingers() {
-        return Collections.emptyList();
+        return adminSingerMapper.selectAll();
     }
 }
