@@ -9,4 +9,5 @@ public interface CommentService {
     List<Song_list_comment> getCommentsBySongListId(int songListId);
     void updateComment(Song_list_comment comment);
     void deleteComment(int id);
+    Song_list_comment selectById(int id);
 }

@@ -16,5 +16,5 @@ public interface SongListCommentMapper {
 
     void deleteComment(int id);
 
-    Song_list_song  selectById(int id);
+    Song_list_comment selectById(int id);
 }

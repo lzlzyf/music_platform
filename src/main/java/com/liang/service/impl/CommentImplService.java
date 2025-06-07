@@ -40,4 +40,9 @@ public class CommentImplService implements CommentService {
     public void deleteComment(int id) {
         commentMapper.deleteComment(id);
     }
+
+    @Override
+    public Song_list_comment selectById(int id) {
+        return commentMapper.selectById(id);
+    }
 }
