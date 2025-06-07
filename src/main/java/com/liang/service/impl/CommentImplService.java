@@ -23,9 +23,6 @@ public class CommentImplService implements CommentService {
         commentMapper.submitComment(comment);
     }
 
-
-
-
     @Override
     public List<Song_list_comment> getCommentsBySongListId(int songListId) {
         return commentMapper.selectBySongListId(songListId);

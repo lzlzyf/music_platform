@@ -5,7 +5,7 @@ import com.liang.domain.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public interface LoginMapper {
     // 用户相关
     User selectUserByUsername(@Param("username") String username);

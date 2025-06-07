@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface FavoriteService {
     void addFavorite(User_favorite favorite);
-    List<User_favorite> getFavoriteByUserId(int userId);
+    List<User_favorite> getFavorite();
     void removeFavorite(int id);
+
 }

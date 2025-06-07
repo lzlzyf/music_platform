@@ -22,7 +22,7 @@ public class CommentController {
 
     //提交评价
     @RequestMapping("/submit")
-    public ResponseResult submitComment(@RequestBody Song_list_comment comment, HttpServletRequest request){
+    public ResponseResult submitComment(@RequestBody Song_list_comment comment,HttpServletRequest request){
         Long userId = AuthContextHolder.getUserIdToken(request);
         if(userId == null){
             return new ResponseResult(401,"未授权",null);
@@ -54,10 +54,12 @@ public class CommentController {
      public ResponseResult deleteComment(@PathVariable int id,HttpServletRequest request){
         Long userId = AuthContextHolder.getUserIdToken(request);
         if(userId == null){
+
             return new ResponseResult(401,"未授权",null);
         }
-        Song_list_comment comment = (Song_list_comment) commentService.getCommentsBySongListId(id);
+        Song_list_comment comment = commentService.selectById(id);
         if(comment !=null && comment.getUser_id() != userId.intValue()){
+
             return new ResponseResult(401,"未授权",null);
         }
         commentService.deleteComment(id);

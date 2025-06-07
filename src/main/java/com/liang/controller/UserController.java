@@ -24,10 +24,7 @@ public class UserController {
         if (userId == null) {
             return new ResponseResult(401, "无权限操作", null);
         }
-        boolean success = userService.updateUser(user);
-        if (!success) {
-            return new ResponseResult(500, "更新失败", null);
-        }
+        userService.updateUser(user);
         return new ResponseResult(200, "更新成功", null);
     }
     // 修改密码

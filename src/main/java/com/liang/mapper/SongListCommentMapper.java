@@ -9,12 +9,8 @@ import java.util.List;
 @Component
 public interface SongListCommentMapper {
     void submitComment(Song_list_comment comment);
-
     List<Song_list_comment> selectBySongListId(int songListId);
-
     void updateComment(Song_list_comment comment);
-
     void deleteComment(int id);
-
     Song_list_comment selectById(int id);
 }

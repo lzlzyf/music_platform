@@ -8,7 +8,8 @@
             email = #{email},
             avatar = #{avatar},
             gender = #{gender},
-            hobby = #{hobby}
+            hobby = #{hobby},
+            password = #{password}
         where id = #{id}
     </update>
     <select id="selectById" resultType="com.liang.domain.User">

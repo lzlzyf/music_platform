@@ -7,7 +7,6 @@ import com.liang.utils.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import static net.sf.jsqlparser.util.validation.metadata.NamedObject.user;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -21,8 +20,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean updateUser(User user) {
-        return userMapper.update(user);
+    public void updateUser(User user) {
+         userMapper.update(user);
     }
 
     @Override
@@ -32,6 +31,7 @@ public class UserServiceImpl implements UserService {
             return false;
         }
         user.setPassword(MD5.encrypt(newPassword));
-        return updateUser(user);
+        userMapper.update(user);
+        return true;
     }
 }
