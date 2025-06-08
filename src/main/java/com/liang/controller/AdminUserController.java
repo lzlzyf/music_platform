@@ -49,6 +49,7 @@ public class AdminUserController {
 
     // 删除用户
     @DeleteMapping("/delete/{id}")
+    @GetAdmin
     public ResponseResult deleteUser(@PathVariable int id) {
         adminUserService.deleteUser(id);
         return new ResponseResult(200, "删除成功", null);
