@@ -40,8 +40,4 @@ public class SongListServiceImpl implements SongListService {
         songListMapper.deleteById(id);
     }
 
-    @Override
-    public void addSongToPlaylist(int playlistId, int songId) {
-        songListMapper.addSongToPlaylist(playlistId, songId);
-    }
 }

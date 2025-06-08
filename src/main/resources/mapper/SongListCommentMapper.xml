@@ -3,7 +3,7 @@
 <mapper namespace="com.liang.mapper.SongListCommentMapper">
     <insert id="submitComment">
         insert into song_list_comment (user_id, song_list_id, content, score, create_time)
-        values (#{userId}, #{songListId}, #{content}, #{score}, NOW())
+        values (#{user_id}, #{song_list_id}, #{content}, #{score}, NOW())
     </insert>
     <update id="updateComment">
         update song_list_comment set content = #{content}, score = #{score} where id = #{id}
@@ -12,7 +12,7 @@
         delete from song_list_comment where id = #{id}
     </delete>
     <select id="selectBySongListId" resultType="com.liang.domain.Song_list_comment">
-         select * from song_list_comment where song_list_id = #{songListId}
+         select * from song_list_comment where song_list_id = #{song_list_id}
     </select>
     <select id="selectById" resultType="com.liang.domain.Song_list_comment">
         select * from song_list_comment where id = #{id}

@@ -8,6 +8,5 @@ public interface SongService {
     void addSong(Song song);
     List<Song> getAllSongs();
     Song getSongById(int id);
-    void updateSong(Song song);
     void deleteSong(int id);
 }

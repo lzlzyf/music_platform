@@ -8,6 +8,5 @@ public interface SongMapper {
     void insert(Song song);
     Song selectById(int id);
     List<Song> selectAll();
-    void updateSong(Song song);
     void deleteSong(int id);
 }

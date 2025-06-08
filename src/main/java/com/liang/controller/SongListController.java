@@ -53,12 +53,4 @@ public class SongListController {
         return new ResponseResult(200, "删除成功", null);
     }
 
-    // 添加歌曲到歌单
-    @PostMapping("/add-song")
-    public ResponseResult addSongToPlaylist(
-            @RequestParam int playlistId,
-            @RequestParam int songId) {
-        songListService.addSongToPlaylist(playlistId, songId);
-        return new ResponseResult(200, "歌曲已加入歌单", null);
-    }
 }

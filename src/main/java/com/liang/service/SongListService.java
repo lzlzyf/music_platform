@@ -10,5 +10,5 @@ public interface SongListService {
     Song_list getPlaylistById(int id);
     void updatePlaylist(Song_list playlist);
     void deletePlaylist(int id);
-    void addSongToPlaylist(int playlistId, int songId);
+
 }

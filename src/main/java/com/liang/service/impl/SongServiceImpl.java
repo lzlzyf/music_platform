@@ -31,10 +31,6 @@ public class SongServiceImpl implements SongService {
         return songMapper.selectById(id);
     }
 
-    @Override
-    public void updateSong(Song song) {
-        songMapper.updateSong(song);
-    }
 
     @Override
     public void deleteSong(int id) {

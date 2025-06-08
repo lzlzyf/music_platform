@@ -18,7 +18,7 @@ public class Song {
     private String lyrics;
     private String file_path;
     private String cover;
-    private LocalDateTime create_timel;
+    private LocalDateTime create_time;
     private String duration;
 
 }

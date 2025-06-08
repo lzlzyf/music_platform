@@ -20,11 +20,6 @@ public class SongController {
         songService.addSong(song);
         return new ResponseResult(200, "添加成功", null);
     }
-    @PutMapping("/update")
-    public ResponseResult updateSong(@RequestBody Song song) {
-        songService.updateSong(song);
-        return new ResponseResult(200, "更新成功", null);
-    }
 
     @DeleteMapping("/delete/{id}")
     public ResponseResult deleteSong(@PathVariable int id) {

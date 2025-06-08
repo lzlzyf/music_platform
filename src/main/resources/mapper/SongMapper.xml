@@ -3,19 +3,8 @@
 <mapper namespace="com.liang.mapper.SongMapper">
     <insert id="insert">
         insert into song (name, singer_id, album, lyrics, file_path, cover, duration)
-        values (#{name}, #{singerId}, #{album}, #{lyrics}, #{filePath}, #{cover}, #{duration})
+        values (#{name}, #{singer_id}, #{album}, #{lyrics}, #{file_path}, #{cover}, #{duration})
     </insert>
-    <update id="updateSong">
-        update song set
-            name = #{name},
-            singer_id = #{singerId},
-            album = #{album},
-            lyrics = #{lyrics},
-            file_path = #{filePath},
-            cover = #{cover}
-            duration = #{duration}
-        where id = {id}
-    </update>
     <delete id="deleteSong">
         delete from song where id = #{id}
     </delete>
