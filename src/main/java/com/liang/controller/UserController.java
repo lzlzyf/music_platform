@@ -1,5 +1,6 @@
 package com.liang.controller;
 
+import com.liang.AOP.GetUser;
 import com.liang.domain.User;
 import com.liang.mapper.UserMapper;
 import com.liang.service.UserService;
@@ -19,11 +20,9 @@ public class UserController {
 
 
     @PutMapping("/update")
-    public ResponseResult updateUserInfo(@RequestBody User user, HttpServletRequest request) {
-        Long userId = AuthContextHolder.getUserIdToken(request);
-        if (userId == null) {
-            return new ResponseResult(401, "无权限操作", null);
-        }
+    @GetUser
+    public ResponseResult updateUserInfo(@RequestBody User user) {
+
         userService.updateUser(user);
         return new ResponseResult(200, "更新成功", null);
     }
