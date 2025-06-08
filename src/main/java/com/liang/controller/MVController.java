@@ -21,7 +21,6 @@ public class MVController {
 
     // 获取所有 MV
     @GetMapping("/list")
-    @GetAdmin
     public ResponseResult getAllMVs() {
 
         List<MV> mvs = mvService.getAllMVs();
@@ -29,7 +28,6 @@ public class MVController {
     }
 
     @GetMapping("/{id}")
-    @GetAdmin
     public ResponseResult getMVById(@PathVariable int id) {
 
         MV mv = mvService.getMVById(id);
@@ -40,7 +38,6 @@ public class MVController {
     }
 
     @PostMapping("/add")
-
     public ResponseResult addMV(@RequestBody MV mv) {
 
         mvService.addMV(mv);
@@ -48,8 +45,6 @@ public class MVController {
     }
 
     @PutMapping("/update")
-    @GetAdmin
-
     public ResponseResult updateMV(@RequestBody MV mv) {
 
         mvService.updateMV(mv);
@@ -57,7 +52,6 @@ public class MVController {
     }
 
     @DeleteMapping("/delete/{id}")
-    @GetAdmin
     public ResponseResult deleteMV(@PathVariable int id) {
 
         mvService.deleteMV(id);
