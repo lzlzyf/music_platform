@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐平台</title>
+    <link rel="stylesheet" href="/src/assets/style.css">
+    <link rel="stylesheet" href="/src/assets/style/playbar.css">
+    <link rel="stylesheet" href="/src/assets/style/artist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 引入Element Plus样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入 axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- 定义axios作为模块 -->
+    <script>
+        // 确保axios在全局可用
+        window.axios = axios;
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <!-- 引入依赖 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    
+    <!-- 引入Element UI (Vue 2版本) -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script>
+        // 创建消息提示函数
+        window.ElMessage = function(options) {
+            if (typeof options === 'string') {
+                ELEMENT.Message(options);
+            } else {
+                ELEMENT.Message(options);
+            }
+        };
+        
+        // 添加类型快捷方法
+        window.ElMessage.success = function(options) {
+            if (typeof options === 'string') {
+                ELEMENT.Message.success(options);
+            } else {
+                options.type = 'success';
+                ELEMENT.Message(options);
+            }
+        };
+        
+        window.ElMessage.error = function(options) {
+            if (typeof options === 'string') {
+                ELEMENT.Message.error(options);
+            } else {
+                options.type = 'error';
+                ELEMENT.Message(options);
+            }
+        };
+        
+        window.ElMessage.info = function(options) {
+            if (typeof options === 'string') {
+                ELEMENT.Message.info(options);
+            } else {
+                options.type = 'info';
+                ELEMENT.Message(options);
+            }
+        };
+        
+        window.ElMessage.warning = function(options) {
+            if (typeof options === 'string') {
+                ELEMENT.Message.warning(options);
+            } else {
+                options.type = 'warning';
+                ELEMENT.Message(options);
+            }
+        };
+    </script>
+    
+    <!-- 引入组件 -->
+    <script type="module" src="/src/components/UserProfile.js"></script>
+    <script type="module" src="/src/components/Header.js"></script>
+    <script type="module" src="/src/components/MainContent.js"></script>
+    <script type="module" src="/src/components/MyPlaylist.js"></script>
+    <script type="module" src="/src/components/PlayBar.js"></script>
+    
+    <!-- 引入主应用 -->
+    <script type="module" src="/src/app.js"></script>
+
+</body>
+</html> 
