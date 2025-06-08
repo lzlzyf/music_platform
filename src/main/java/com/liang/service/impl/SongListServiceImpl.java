@@ -6,6 +6,7 @@ import com.liang.service.SongListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -20,8 +21,8 @@ public class SongListServiceImpl implements SongListService {
     }
 
     @Override
-    public List<Song_list> getPlaylistsByUserId(int userId) {
-        return songListMapper.selectByUserId(userId);
+    public List<Song_list> getPlaylists() {
+        return songListMapper.selectAll();
     }
 
     @Override

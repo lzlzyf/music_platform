@@ -20,12 +20,12 @@
     <delete id="deleteById">
         delete from song_list where id = #{id}
     </delete>
-    <select id="selectByUserId" resultType="com.liang.domain.Song_list">
+    <select id="selectById" resultType="com.liang.domain.Song_list">
         select * from song_list where id in (
             select distinct song_list_id from user_favorite where user_id = #{userId}
         )
     </select>
-    <select id="selectById" resultType="com.liang.domain.Song_list">
-        select * from song_list where id = #{id}
+    <select id="selectAll" resultType="com.liang.domain.Song_list">
+        select * from song_list
     </select>
 </mapper>

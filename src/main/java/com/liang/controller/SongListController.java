@@ -1,5 +1,6 @@
 package com.liang.controller;
 
+import com.liang.AOP.GetUser;
 import com.liang.domain.Song_list;
 import com.liang.service.SongListService;
 import com.liang.utils.AuthContextHolder;
@@ -19,11 +20,7 @@ public class SongListController {
 
     // 创建歌单
     @PostMapping("/create")
-    public ResponseResult createPlaylist(@RequestBody Song_list playlist, HttpServletRequest request) {
-        Long userId = AuthContextHolder.getUserIdToken(request);
-        if (userId == null) {
-            return new ResponseResult(401, "未授权", null);
-        }
+    public ResponseResult createPlaylist(@RequestBody Song_list playlist) {
         songListService.createPlaylist(playlist);
         return new ResponseResult(200, "创建成功", playlist);
     }
@@ -31,11 +28,7 @@ public class SongListController {
     // 获取所有歌单
     @GetMapping("/list")
     public ResponseResult getAllPlaylists(HttpServletRequest request) {
-        Long userId = AuthContextHolder.getUserIdToken(request);
-        if (userId == null) {
-            return new ResponseResult(401, "未授权", null);
-        }
-        List<Song_list> playlists = songListService.getPlaylistsByUserId(userId.intValue());
+        List<Song_list> playlists = songListService.getPlaylists();
         return new ResponseResult(200, "获取成功", playlists);
     }
 
